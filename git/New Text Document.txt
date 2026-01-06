@@ -1,0 +1,119 @@
+class Main {
+    public static void main(String[] args) {
+        String s ="efw@bj5";
+        String s1 =s.replaceAll("[^a-zA-Z]","");
+         System.out.println(s1);
+        int index =s1.length()-1;
+        String rev ="";
+        for(int i=0;i<s.length()-1;i++){
+            char ch=s.charAt(i);
+            if(ch>='A' && ch>='Z' || ch>='a' && ch>='z'){
+                rev+=s1.charAt(index--);
+            }else{
+                rev+=s.charAt(i);
+            }
+        }
+        System.out.println(rev);
+    }
+}
+
+======================================================
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        String s ="{([])}";
+        List<Character> list = new ArrayList<>();
+        for(int i=0;i<s.length();i++){
+            if(list.size()>0 && (s.charAt(i)=='}' && list.get(list.size()-1)=='{' || (s.charAt(i)==']' && list.get(list.size()-1)=='[' ||(s.charAt(i)==')' && list.get(list.size()-1)=='(' )))){
+                list.remove(list.get(list.size()-1));
+            }else{
+                list.add(s.charAt(i));
+            }
+            }if(list.isEmpty()){
+                System.out.println(s+" is a balenced string");
+            }else{
+                System.out.println(s+" is not a balenced string");
+            
+        }
+    }
+}
+
+
+======================================================
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+       int[] a = {3,2,6,4,7,1};
+       for(int i=0;i<a.length-1;i++){
+           for(int j=i+1;j<a.length-1;j++){
+               if(a[i]==a[j]){
+                   int temp=a[i];
+                   a[i]=a[j];
+                   a[j]=temp;
+               }
+           }
+       }
+       }
+       System.out.println(Arrays.toString(a));
+    }
+}
+======================================================
+class Main {
+    public static void main(String[] args) {
+        String s ="9972304176";
+        
+            int sum=0;
+            for(int i=0;i<=s.length()-1;i++){
+                sum+=s.charAt(i)-'0';
+                while(sum>9){
+                    sum=sum/10+sum%10;
+                }
+                System.out.println(sum+s.substring(i+1));
+            }
+            
+       
+    }
+}
+====================================================
+class Main {
+    public static void main(String[] args) {
+        int l =176;
+                while(l>9){
+                    int sum=0;
+                    while(l>0){
+                        sum+=l%10;
+                        l=l/10;
+                    }
+                    l=sum;
+                }
+              System.out.println(l);  
+            
+    }          
+    }
+==================================================
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        String[]  str ={"Java@195","SQL", "Malyalam@","apple"};
+        for(int i=0;i<str.length;i++){
+            String word =str[i];
+            String word1=word.replaceAll("[A-Za-z]","");
+            if(!word1.isEmpty()){
+                String word2 = word.replaceAll("[^A-Za-z0-9]","");
+                int index=word2.length()-1;
+                String rev="";
+                for(int j=0;j<=word.length()-1;j++){
+            char ch=word.charAt(j);
+            if(ch>='A' && ch<='Z' || ch>='a' && ch<='z' || ch>= '0' && ch<='9'){
+                rev+=word2.charAt(index--);
+            }else{
+                rev+=word.charAt(j);
+            }
+        }
+        str[i]=rev;
+            }
+        }
+        System.out.println(Arrays.toString(str));
+    }
+}
+==================================================
